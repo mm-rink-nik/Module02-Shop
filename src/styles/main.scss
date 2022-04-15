@@ -78,6 +78,11 @@ body {
     background-size: contain;
     width: 12.3rem;
     height: 3.2rem;
+    &_footer {
+        flex-basis: 18rem;
+        height: 4.8rem;
+        margin-top: -10rem;
+    }
 }
 .container {
     max-width: 1440px;
@@ -230,10 +235,16 @@ body {
     &__span {
         font-style: italic;
     }
+    
     &_block {
         .title__span {
             display: block;
         }
+        .title_span-min {
+            display: contents;;
+        }
+
+        
     }
 }
 .description {
@@ -256,7 +267,7 @@ body {
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
-    gap: 5%;
+    border: none;
     &_min {
         font-size: 1.4rem;
         padding: 2rem 1.4rem;
@@ -705,10 +716,19 @@ body {
         align-items: center;
         margin-top: 5.6rem;
         margin-left: 12rem;
-        gap: 12%;
+        gap: 11.5%;
     }
     &__text {
         flex-basis: 44%;
+    }
+    &__description {
+        margin-bottom: 2.6rem;
+    }
+    &description-min {
+        margin-bottom: -2px;
+    }
+    &__pay {
+        flex-basis: 37%;
     }
     &__link {
         color: $green;
@@ -743,7 +763,7 @@ body {
         background-position: center center;
         opacity: .4;
         transform: scale(1);
-        transition: .2s;
+        transition: .10s;
         &:hover {
             opacity: 1;
             transform: scale(1.05);
@@ -762,3 +782,258 @@ body {
         background-image: url(../images/paypal.svg);
     }
 }
+
+.contact {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    &-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__text {
+            max-width: 400px;
+            flex-grow: 1;
+            margin-left: 12rem;
+            margin-top: 6rem;
+            line-height: 1.5;
+        }
+        &__description {
+            font-size: 1.8rem;
+            line-height: 1.5;
+        }
+        &__list {
+            list-style-type: none;
+            font-size: 2.4rem;
+            padding-left: 0;
+            margin-top: 6rem;
+            margin-bottom: 0;
+        }
+        &__item_s {
+            margin-bottom: 2rem;
+        }
+        &__form {
+            flex-basis: 589px;
+        }
+        &__item {
+            padding-top: 7rem;
+            padding-bottom: 13rem;
+        }
+        &__link {
+            display: flex;
+            color: $green;
+            text-decoration: none;
+            font-weight: 500;
+            align-items: center;
+            gap: 3rem;
+            &::before {
+                content: '';
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 29px;
+                height: 30px;
+                display: block;
+            }
+        }
+        &__tel {
+            &::before {
+                background-image: url(../images/tel.svg);
+                background-size: 29px 30px;
+            }
+        }
+        &__mail {
+            &::before {
+                background-image: url(../images/mail.svg);
+                background-size: 29px 29px;
+            }
+        }
+    }
+
+}
+
+.card {
+    padding: 3.2rem 5.8rem 4rem;
+    border: 2px solid rgba($green, .4);
+    border-radius: 2rem;
+    
+    &__title {
+        font-family: $font-cormorant;
+        font-size: 30px;
+        margin-top: 0;
+    }
+    &__label {
+        font-family: $font-cormorant;
+        font-size: 12px;
+        margin-bottom: 1rem;
+        display: block;
+        border-radius: 2rem;
+        margin-left: .6rem;
+    }
+    &__input {
+        border: 1px solid rgba($green, .4);
+        padding: 2.2rem 3rem;
+        margin-bottom: 2.8rem;
+        display: block;
+        border-radius: 2rem;
+        padding: 2.2rem 3rem;
+        width: 100%; /* до конца блока делает пэддинг */
+        box-sizing: border-box; /* помогает обрезать часть линии формы */
+        &:focus { /* обводка */
+            border: 1px solid rgba($green, 1);
+            outline: none; /* отключается дефолтную обводку */
+        }
+        &:invalid {
+            border: red;
+            outline: none;
+        }
+    }
+    &__check {
+        font-size: 1.2rem;
+        color: rgba($green, .6);
+        line-height: 1.5;
+        max-width: 360px;
+        margin-top: 1.6rem;
+        margin-bottom: 0;
+    }
+    &__link {
+        margin-top: 1.2rem;
+    }
+    &__docs {
+        color: rgba($green, .6);
+        text-decoration: none;
+        border-bottom: 1px solid #ecedec;
+    }
+}
+footer {
+    background-image: url(../images/footer&contact_bg.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    border-top: 2px solid rgba($green, 0.2);
+    padding-top: 7.9rem;
+    padding-bottom: 7rem;
+}
+
+.footer {
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.8rem;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 66.5%;  
+    }
+    /* список 1 и 2 */
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    &__item {
+        margin-bottom: 2.6rem;
+    }
+    &__link {
+        color: $green;
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    /* номер и почта*/
+
+    &__contact {
+        margin-top: -0.5rem
+    }
+    &__tel {
+        display: block;
+        text-decoration: none;
+        font-size: 2.7rem;
+        color: $green;
+        margin-bottom: 3rem;
+    }
+    &__mail {
+        display: block;
+        text-decoration: none;
+        color: $green;
+
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: rgba($green, .6);
+        margin-top: 4rem;
+    }
+
+    /* соцсети */
+
+    .footer-social {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0;
+        margin-top: 3rem;
+        margin-bottom: 0;
+        &__item {
+            
+
+        }
+        &__link {
+            display: block;
+            width: 4.6rem;
+            height: 4.6rem;
+            border: 2px solid $green;
+            border-radius: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: .8;
+            transition: .2s;
+        }
+        &__vk {
+            background-image: url(../images/vk.svg);
+            background-size: 2.3rem
+        }
+        &__inst {
+            background-image: url(../images/inst.svg);
+            background-size: 2.3rem
+        }
+        &__fb {
+            background-image: url(../images/fb.svg);
+            background-size: 2.3rem
+        }
+    }
+
+
+
+
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__copy {
+        color: rgba($green, 0.6);
+    }
+    &__author {
+        color: rgba($green, 0.6);
+        text-decoration: none;
+        transition: .2s;
+    }
+    &__author-link {
+        text-decoration: none;
+        color: rgba($green, 1);
+        opacity: 0.6;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/* нижняя строка */
+
+
