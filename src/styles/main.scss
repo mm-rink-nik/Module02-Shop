@@ -2,6 +2,7 @@
 
 $green: #27300f;
 $orange: #d26a22;
+$dark-orange: #cf5c0d;
 $white: #fff;
 
 $font-jost: 'Jost', sans-serif;
@@ -15,15 +16,24 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;
     color: $green;
+    background-image: url(../images/bg.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
 
 .header {
     max-width: 1440px;
-    margin: 0 auto 6rem;
+    margin: 0 auto 5rem;
     padding: 4rem 15px 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8rem;
+    &__navigation {
+        flex-grow: 1;
+        margin-left: 4rem;
+    }
     &__nav  {
         display: flex;
         list-style-type: none;
@@ -34,6 +44,7 @@ body {
     &__link {
         color: $green;
         text-decoration: none;
+        transition: .3s;
         &:hover {
             color: $orange;
         }
@@ -42,13 +53,16 @@ body {
         color: $green;
         font-weight: 500;
         text-decoration: none;
+        flex-basis: 200px;
+        letter-spacing: .13rem;
+        text-align: right;
         &:hover {
             color: $orange;
         }
     }
     &__cart {
         display: block;
-        width: 4rem;
+        flex-basis: 4rem;
         height: 4rem;
         border-radius: 100%;
         background-color: $orange;
@@ -58,6 +72,7 @@ body {
         background-position: center center;
         position: relative;
         border: 1px solid $orange;
+        transition: .3s;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -76,7 +91,7 @@ body {
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 12.3rem;
+    flex-basis: 12.3rem;
     height: 3.2rem;
     &_footer {
         flex-basis: 18rem;
@@ -91,10 +106,6 @@ body {
     padding-left: 15px;
 }
 .main {
-    background-image: url(../images/main.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 96px;
     z-index: 0;
@@ -135,6 +146,8 @@ body {
     }
     &__image {
         width: 92%;
+        border-radius: 100%;
+        animation: shadow 5s linear infinite;
     }
     &__btn {
         background-color: transparent;
@@ -146,9 +159,9 @@ body {
         &:hover {
                 background-color: transparent;
                 &::before {
+                    transition: .3s;
                     background-color: $orange;
                     box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
-                    transition: 0.4s;
                 }
         }
         &::before {
@@ -159,21 +172,22 @@ body {
             box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
             border-radius: 100%;
             position: absolute;
+            transition: .3s;
         }
         &_1 {
-            top: 37px;
-            left: 79px;
+            top: 33px;
+            left: 66px;
             &::before {
-                bottom: -8px;
-                right: -19px;
+                bottom: 7px;
+                right: -36px;
             }
         }
         &_2 {
-            top: 192px;
-            right: 5px;
+            top: 182px;
+            right: 4px;
             &::before {
-                bottom: 4px;
-                left: -23px;
+                bottom: 15px;
+                left: -24px;
             }
         }
         &_3 {
@@ -189,41 +203,42 @@ body {
         display: block;
         color: rgba($green, 0.8);
         margin-top: 1rem;
+        margin-bottom: 0.5rem;
         z-index: -1;
     }
     &__tomato {
         position: absolute;
-        bottom: 121px;
-        right: 175px;
+        bottom: 48px;
+        right: 112px;
         width: 11rem;
         z-index: -1;
     }
     &__cucumber {
         position: absolute;
         top: 0px;
-        left: 600px;
-        width: 11rem;
+        left: 676px;
+        width: 9rem;
         z-index: -1;
     }
     &__beans {
         position: absolute;
-        top: 800px;
-        left: 0px;
+        top: 796px;
+        left: -12px;
         width: 11rem;
         z-index: -1;
     }
     &__avocado {
         position: absolute;
         top: 50px;
-        right: 0px;
-        width: 11rem;
+        right: -5px;
+        width: 17rem;
         z-index: -1;
     }
     &__pepper {
         position: absolute;
-        top: 400px;
-        left: 40px;
-        width: 11rem;
+        top: 397px;
+        left: 29px;
+        width: 9rem;
         z-index: -1;
     }
 }
@@ -232,6 +247,7 @@ body {
     font-weight: 700;
     font-size: 8rem;
     line-height: 77px;
+    
     &__span {
         font-style: italic;
     }
@@ -268,10 +284,14 @@ body {
     border-radius: 3.8rem;
     display: inline-block;
     border: none;
+    transition: .3s;
     &_min {
         font-size: 1.4rem;
         padding: 2rem 1.4rem;
         box-shadow: 8px 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
+    }
+    &:hover {
+        background-color: $dark-orange;
     }
     
 }
@@ -279,12 +299,8 @@ body {
 /* вторая часть */
 
 .offer {
-    background-image: url(../images/offer_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    padding-top: 2rem;
-    padding-bottom: 4.8rem;
+    padding-top: 3.7rem;
+    padding-bottom: 3.8rem;
     &__text {
         margin-top: 20px;
         max-width: 700px;
@@ -338,7 +354,7 @@ body {
         box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
     }
     &_milk {
-        background-image: url(../images/png/milk.png);
+        background-image: url(../images/bottle.png);
     
     }
     &_pasta {
@@ -507,10 +523,6 @@ body {
 }
 
 .about {
-    background-image: url(../images/about_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     margin-top: -21px;
     padding-bottom: 12.8rem;
     &__box {
@@ -571,10 +583,6 @@ body {
 }
 
 .trends {
-    background-image: url(../images/trends_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     padding-top: 2rem;
     padding-bottom: 2.8rem;
     &__text {
@@ -584,11 +592,6 @@ body {
 }
 
 .catalog {
-    background-image: url(../images/category_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
-
     &__btn {
         cursor: pointer;
         display: flex;
@@ -704,11 +707,7 @@ body {
 }
 
 .delivery {
-    background-image: url(../images/delivery_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    padding-bottom: 8rem;
+    margin-top: 11rem;
     &__box {
         display: flex;
         font-size: 1.8rem;
@@ -762,11 +761,11 @@ body {
         background-size: cover;
         background-position: center center;
         opacity: .4;
-        transform: scale(1);
-        transition: .10s;
+        transform: scale(1); /* используется по умолчанию */
+        transition: .3s;
         &:hover {
             opacity: 1;
-            transform: scale(1.05);
+            transform: scale(1.05); /* (16.трансформация) плавное увелечение элемента */
         }
     }
     &__mastercard {
@@ -784,8 +783,8 @@ body {
 }
 
 .contact {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 9rem;
+    padding-bottom: 7rem;
     &-box {
         display: flex;
         align-items: center;
@@ -816,7 +815,7 @@ body {
         }
         &__item {
             padding-top: 7rem;
-            padding-bottom: 13rem;
+            padding-bottom: 10.1rem;
         }
         &__link {
             display: flex;
@@ -896,6 +895,7 @@ body {
     }
     &__link {
         margin-top: 1.2rem;
+        cursor: pointer;
     }
     &__docs {
         color: rgba($green, .6);
@@ -904,15 +904,10 @@ body {
     }
 }
 footer {
-    background-image: url(../images/footer&contact_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    border-top: 2px solid rgba($green, 0.2);
+    border-top: 1px solid #ecedec;
     padding-top: 7.9rem;
     padding-bottom: 7rem;
 }
-
 .footer {
     &__box {
         display: flex;
@@ -979,9 +974,12 @@ footer {
         padding-left: 0;
         margin-top: 3rem;
         margin-bottom: 0;
-        &__item {
-            
-
+        transform: scale(1);
+        &__item {  
+            transition: 0.3s;
+            &:hover {
+                transform: scale(1.05);
+            }
         }
         &__link {
             display: block;
@@ -993,6 +991,9 @@ footer {
             background-position: center;
             opacity: .8;
             transition: .2s;
+            &:hover {
+                opacity: 1;
+            }
         }
         &__vk {
             background-image: url(../images/vk.svg);
@@ -1020,7 +1021,7 @@ footer {
         color: rgba($green, 0.6);
     }
     &__author {
-        color: rgba($green, 0.6);
+        color: rgba($green, .6);
         text-decoration: none;
         transition: .2s;
     }
@@ -1028,12 +1029,23 @@ footer {
         text-decoration: none;
         color: rgba($green, 1);
         opacity: 0.6;
+        transition: .2s;
         &:hover {
             opacity: 1;
         }
     }
 }
 
-/* нижняя строка */
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0 rgb($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+}
 
 
