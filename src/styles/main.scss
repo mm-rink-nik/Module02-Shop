@@ -194,6 +194,9 @@ body {
         flex-basis: 18rem;
         height: 4.8rem;
         margin-top: -10rem;
+        @media (max-width: $r_tab) {
+            margin-top: -5rem;
+        }
     }
 }
 .container {
@@ -201,6 +204,9 @@ body {
     margin: 0 auto;
     padding-right: 15px;
     padding-left: 15px;
+    @media (max-width: $r_tab) {
+        max-width: 700px;
+    }
 }
 .main {
     position: relative;
@@ -213,9 +219,21 @@ body {
         @media (max-width: $r_desk_1280) {
             margin-left: 8rem;
         }
+        @media (max-width: $r_desk_1120) {
+            margin-left: 4rem;
+        }
+        @media (max-width: $r_tab) {
+            max-width: 100%;
+            margin-left: 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
     }
     &__link {
-        margin-top: 6rem;
+        margin-top: 5.3rem;
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
     }
     &__flex {
         display: flex;
@@ -284,6 +302,30 @@ body {
         border-radius: 100%;
         animation: shadow 5s linear infinite;
     }
+    &__imagemobi {
+        display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+            max-width: 400px;
+            margin: 0 auto; //расположение картинки по центру
+            margin-top: 3rem;
+            animation: shadow 5s linear infinite;
+            border-radius: 100%;
+        }
+    }
+
+    &__text {
+        padding-top: 4rem;
+        @media (max-width: $r_desk_1120) {
+            flex-basis: 395px;
+        }
+        @media (max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
+        }
+
+    }
+
     &__btn {
         background-color: transparent;
         border: none;
@@ -408,6 +450,10 @@ body {
     @media (max-width: $r_desk_1120) {
         font-size: 6rem;
     }
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
+
     &__span {
         font-style: italic;
     }
@@ -426,6 +472,9 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
+    @media (max-width: $r_tab) {
+        flex-basis: 100%
+    }
     &_size-s {
         font-size: 1.8rem;
         @media (max-width: $r_desk_1280) {
@@ -473,6 +522,11 @@ body {
     &__text {
         margin-top: 20px;
         max-width: 700px;
+        @media (max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
+            text-align: center;
+        }
     }
 }
 
@@ -699,11 +753,22 @@ body {
         justify-content: space-between;
         align-items: center;
         margin-top: 7rem;
+        @media (max-width: $r_tab) {
+            display: block;
+            text-align: center;
+        }
     }
     &__text {
         margin-top: 0;
         max-width: 620px;
         margin-left: 125px;
+        @media (max-width: $r_tab) {
+            margin: 0 auto;
+            text-align: center;
+            
+
+            
+        }
     }
     &__list {
         list-style: none;
@@ -714,6 +779,12 @@ body {
         font-size: 3rem;
         margin: 0;
         padding-left: 0;
+        @media (max-width: $r_tab) {
+            margin-left: 0;
+            text-align: center;
+            justify-content: center;
+            margin-top: 3rem;
+        }
     }
     &__item {
         display: flex;
@@ -757,6 +828,11 @@ body {
     &__text {
         margin-top: -21px;
         max-width: 750px;
+        @media (max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
+            text-align: center;
+        }
     }
 }
 
@@ -885,6 +961,14 @@ body {
         margin-top: 5.6rem;
         margin-left: 12rem;
         gap: 11.5%;
+        @media (max-width: $r_tab) {
+            margin-top: 5.6rem;
+            margin-left: 0;
+            display: block;
+            flex-basis: 100%;
+            padding-top: 0;
+            text-align: center;
+        }
     }
     &__text {
         flex-basis: 44%;
@@ -936,6 +1020,14 @@ body {
             opacity: 1;
             transform: scale(1.05); /* (16.трансформация) плавное увелечение элемента */
         }
+        @media (max-width: $r_tab) {
+            margin-top: 0;
+            margin-left: 0;
+            display: block;
+            margin: 0 auto;
+
+            
+        }
     }
     &__mastercard {
         width: 53px;
@@ -958,12 +1050,25 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: $r_tab) {
+            display: block;
+            
+            
+        }
+
         &__text {
             max-width: 400px;
             flex-grow: 1;
             margin-left: 12rem;
             margin-top: 6rem;
             line-height: 1.5;
+            @media (max-width: $r_tab) {
+                max-width: 768px;
+                margin-left: 0;
+                margin-top: 3rem;
+                text-align: center;
+                
+            }
         }
         &__description {
             font-size: 1.8rem;
@@ -975,6 +1080,13 @@ body {
             padding-left: 0;
             margin-top: 6rem;
             margin-bottom: 0;
+            @media (max-width: $r_tab) {
+                display: flex;
+                font-size: 1.8rem;
+                margin-top: 2rem;
+                gap: 2rem;
+                justify-content: center; // выставил элементы по центру
+            }
         }
         &__item_s {
             margin-bottom: 2rem;
@@ -1067,9 +1179,12 @@ body {
         cursor: pointer;
     }
     &__docs {
-        color: rgba($green, .6);
+        color: rgba($green, .8);
         text-decoration: none;
         border-bottom: 1px solid #ecedec;
+        &:hover {
+            color: rgba($green, 1);
+        }
     }
 }
 footer {
@@ -1083,20 +1198,45 @@ footer {
         justify-content: space-between;
         align-items: center;
         font-size: 1.8rem;
+        @media (max-width: $r_tab) {
+            display: block;
+            justify-content: center center;
+        }
     }
     &__info {
         display: flex;
         justify-content: space-between;
         flex-basis: 66.5%;  
+        @media (max-width: $r_tab) {
+            display: block;
+            align-items: center;
+        }
     }
     /* список 1 и 2 */
     &__list {
         list-style-type: none;
         padding-left: 0;
         margin: 0;
+        @media (max-width: $r_tab) {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+    }
+    &__adress {
+        @media (max-width: $r_tab) {
+            display: block;
+            align-items: center;
+        }
     }
     &__item {
         margin-bottom: 2.6rem;
+        @media (max-width: $r_tab) {
+            display: block;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
     }
     &__link {
         color: $green;
@@ -1105,12 +1245,20 @@ footer {
         &:hover {
             color: $orange;
         }
+        @media (max-width: $r_tab) {
+            display: block;
+            align-items: center;
+        }
     }
 
     /* номер и почта*/
 
     &__contact {
-        margin-top: -0.5rem
+        margin-top: -0.5rem; 
+        @media (max-width: $r_tab) {
+            display: block;
+            margin-top: 2rem;
+        }
     }
     &__tel {
         display: block;
@@ -1118,6 +1266,11 @@ footer {
         font-size: 2.7rem;
         color: $green;
         margin-bottom: 3rem;
+        @media (max-width: $r_tab) {
+            display: block;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
     }
     &__mail {
         display: block;
@@ -1144,6 +1297,12 @@ footer {
         margin-top: 3rem;
         margin-bottom: 0;
         transform: scale(1);
+        @media (max-width: $r_tab) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
         &__item {  
             transition: 0.3s;
             &:hover {
@@ -1211,6 +1370,9 @@ footer {
     }
     50% {
         box-shadow: 20px 20px 33px 0 rgb($green, .5);
+        // @media (max-width: $r_tab) {
+        //     box-shadow: 0px 0px 0px 0 rgb($green, .5);
+        // }
     }
     100% {
         box-shadow: 0 0 0 0 rgba($green, .5);
