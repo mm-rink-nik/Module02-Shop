@@ -428,6 +428,9 @@ body {
         @media (max-width: $r_desk_full_1750) {
             bottom: 5rem;
         }
+        @media (max-width: $r_desk_1120) {
+            bottom: -4rem;
+        }
     }
     &__cucumber {
         position: absolute;
@@ -1200,6 +1203,9 @@ body {
                 text-align: center;
                 margin: 0 auto;
             }
+            @media (max-width: $r_desk_1120) {
+                margin-right: 4rem;
+            }
         }
         &__description {
             font-size: 1.8rem;
@@ -1269,6 +1275,9 @@ body {
         padding: 2.2rem 3.8rem 2rem;
         margin-left: 4rem;
         margin-right: 4rem;
+    }
+    @media (max-width: $r_tab_900) {
+        padding: 2.2rem 3.5rem 2rem;
     }
     &__title {
         font-family: $font-cormorant;
@@ -1364,6 +1373,10 @@ footer {
             gap: 2rem;
             margin: 2rem;
             justify-content: center;
+        }
+        @media (max-width: $r_desk_1120) {
+            max-width: 185px;
+            margin-left: -3rem;
         }
     }
     &__adress {
